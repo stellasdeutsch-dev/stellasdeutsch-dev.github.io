@@ -1,62 +1,62 @@
-/* Stellas Deutsch — подборка фильмов и сериалов для А0–А1–А2.
-   Тексты в стиле Шынгыса. Коротко. По делу. */
+/* Stellas Deutsch — подборка мультфильмов для А0–А1–А2.
+   Тема Disney. Тексты в стиле Шынгыса. Коротко. По делу. */
 
 const FILMS = [
   /* ---------------- A0 ---------------- */
   {
-    id: "nicos-weg",
-    title: "Дорога Нико",
-    titleDe: "Nicos Weg",
-    year: 2018,
+    id: "shaun-das-schaf",
+    title: "Барашек Шон",
+    titleDe: "Shaun das Schaf",
+    year: 2007,
     level: "A0",
-    kind: "Сериал",
-    genre: ["Учебный", "Драма"],
-    rating: 4.9,
-    duration: "≈3 мин / серия",
-    poster: { icon: "🧭", grad: "linear-gradient(160deg,#5b8def,#1b3a8f)" },
+    kind: "Мультсериал",
+    genre: ["Комедия", "Для малышей"],
+    rating: 4.8,
+    duration: "≈7 мин",
+    poster: { icon: "🐑", grad: "linear-gradient(160deg,#9fd3a8,#3e7d52)" },
     review:
-      "Нико приехал в Германию. Один. Без языка. Каждая серия короткая. Речь медленная. Слова чёткие. Сделано для тех, кто только начал. Идеальный старт.",
-    why: "Речь замедлена специально. Субтитры есть. Ноль стресса.",
+      "Слов тут нет. Совсем. Только блеянье и музыка. Шон хитрый. Ферма живая. Смешно без перевода. Идеальный старт — язык не мешает.",
+    why: "Речи почти ноль. Понятно всем. Смеёшься и расслабляешься.",
     links: [
-      { name: "DW Learn German", url: "https://learngerman.dw.com/de/nicos-weg/c-36519789" },
-      { name: "YouTube", url: "https://www.youtube.com/playlist?list=PLpbtHNEEz3rjuIrGdvxIZLZQih1Yv7-Ff" }
+      { name: "Netflix", url: "https://www.netflix.com/title/70153138" },
+      { name: "YouTube", url: "https://www.youtube.com/@ShauntheSheep" }
     ]
   },
   {
-    id: "extra-deutsch",
-    title: "Extr@ по-немецки",
-    titleDe: "Extr@ auf Deutsch",
-    year: 2004,
+    id: "der-kleine-maulwurf",
+    title: "Кротик",
+    titleDe: "Der kleine Maulwurf",
+    year: 1957,
     level: "A0",
-    kind: "Ситком",
-    genre: ["Комедия", "Учебный"],
+    kind: "Мультсериал",
+    genre: ["Приключения", "Для малышей"],
+    rating: 4.6,
+    duration: "≈10 мин",
+    poster: { icon: "🐭", grad: "linear-gradient(160deg,#c9a06b,#6b4a2b)" },
+    review:
+      "Маленький крот. Большое сердце. Говорит редко. Всё показывает мимикой. Добрая классика. Понятно без слов вообще.",
+    why: "Почти без диалогов. Одни картинки и эмоции.",
+    links: [
+      { name: "YouTube", url: "https://www.youtube.com/results?search_query=der+kleine+maulwurf" }
+    ]
+  },
+  {
+    id: "die-biene-maja",
+    title: "Пчёлка Майя",
+    titleDe: "Die Biene Maja",
+    year: 1975,
+    level: "A0",
+    kind: "Мультсериал",
+    genre: ["Приключения", "Для малышей"],
     rating: 4.4,
     duration: "≈25 мин",
-    poster: { icon: "🛋️", grad: "linear-gradient(160deg,#8e5bef,#3a1b8f)" },
+    poster: { icon: "🐝", grad: "linear-gradient(160deg,#ffd86b,#e0952b)" },
     review:
-      "Две девушки. Одна квартира. Гость из-за границы. Всё просто. Всё смешно. Диалоги бытовые. Слова повторяются. Ты понимаешь и смеёшься.",
-    why: "Сюжет про быт. Лексика повседневная. Мимика помогает.",
+      "Майя летает по лугу. Знакомится с жуками. Задаёт вопросы. Речь медленная и ясная. Немецкая классика для самых маленьких.",
+    why: "Простые фразы. Медленный темп. Всё про природу.",
     links: [
-      { name: "YouTube", url: "https://www.youtube.com/watch?v=8pWMNznu2Rc" }
-    ]
-  },
-  {
-    id: "sendung-mit-der-maus",
-    title: "Передача с Мышонком",
-    titleDe: "Die Sendung mit der Maus",
-    year: 1971,
-    level: "A0",
-    kind: "Передача",
-    genre: ["Детское", "Познавательное"],
-    rating: 4.6,
-    duration: "≈30 мин",
-    poster: { icon: "🐭", grad: "linear-gradient(160deg,#ef9a5b,#8f4a1b)" },
-    review:
-      "Классика. Смотрят дети. Смотрят взрослые. Объясняют мир простыми словами. Как делают хлеб. Как летит ракета. Картинка объясняет за тебя.",
-    why: "Много показа, мало текста. Речь ясная и добрая.",
-    links: [
-      { name: "ARD Mediathek", url: "https://www.wdrmaus.de/" },
-      { name: "YouTube", url: "https://www.youtube.com/@diesendungmitdermaus" }
+      { name: "KiKA", url: "https://www.kika.de/die-biene-maja/index.html" },
+      { name: "YouTube", url: "https://www.youtube.com/@DieBieneMaja" }
     ]
   },
   {
@@ -66,144 +66,109 @@ const FILMS = [
     year: 2004,
     level: "A0",
     kind: "Мультсериал",
-    genre: ["Детское"],
+    genre: ["Для малышей"],
     rating: 4.3,
     duration: "≈5 мин",
-    poster: { icon: "🐷", grad: "linear-gradient(160deg,#ef5b9c,#8f1b52)" },
+    poster: { icon: "🐷", grad: "linear-gradient(160deg,#ff9ad4,#b0347c)" },
     review:
-      "Маленькие серии. Простые фразы. Семья, лужи, друзья. Дети учат родной язык именно так. Ты можешь так же. Не стыдно. Работает.",
-    why: "Предложения короткие. Темы бытовые. Повтор слов постоянный.",
+      "Маленькие серии. Простые фразы. Семья, лужи, друзья. Дети учат язык именно так. Ты можешь так же. Не стыдно. Работает.",
+    why: "Предложения короткие. Темы бытовые. Слова повторяются.",
     links: [
       { name: "YouTube", url: "https://www.youtube.com/@PeppaWutz" }
     ]
   },
   {
-    id: "loewenzahn",
-    title: "Одуванчик",
-    titleDe: "Löwenzahn",
-    year: 1981,
+    id: "das-sandmaennchen",
+    title: "Песочный человечек",
+    titleDe: "Das Sandmännchen",
+    year: 1959,
     level: "A0",
-    kind: "Передача",
-    genre: ["Детское", "Познавательное"],
+    kind: "Мультсериал",
+    genre: ["Спокойное", "Для малышей"],
     rating: 4.2,
-    duration: "≈25 мин",
-    poster: { icon: "🌱", grad: "linear-gradient(160deg,#5bef8e,#1b8f4a)" },
+    duration: "≈6 мин",
+    poster: { icon: "🌙", grad: "linear-gradient(160deg,#7b8ce0,#2a3374)" },
     review:
-      "Про природу. Про технику. Про жизнь. Ведущий говорит спокойно. Показывает всё руками. Немецкий тут добрый и наглядный.",
-    why: "Наглядно и медленно. Хорошо для ушей новичка.",
+      "Сказка перед сном. Тихо. Мягко. Короткие истории. Голос спокойный. Слушаешь и засыпаешь. Немецкий тут как колыбельная.",
+    why: "Спокойный голос. Простые сказки. Идеально на ночь.",
     links: [
-      { name: "ZDF Mediathek", url: "https://www.zdf.de/kinder/loewenzahn" }
+      { name: "ARD Mediathek", url: "https://www.sandmann.de/" }
     ]
   },
   {
-    id: "jojo-sucht-das-glueck",
-    title: "ЙоЙо ищет счастье",
-    titleDe: "JoJo sucht das Glück",
-    year: 2011,
+    id: "pettersson-und-findus",
+    title: "Петсон и Финдус",
+    titleDe: "Pettersson und Findus",
+    year: 1999,
     level: "A0",
-    kind: "Телероман",
-    genre: ["Драма", "Учебный"],
-    rating: 4.5,
-    duration: "≈4 мин",
-    poster: { icon: "💌", grad: "linear-gradient(160deg,#ef5b5b,#8f1b1b)" },
+    kind: "Мультфильм",
+    genre: ["Семейное", "Для малышей"],
+    rating: 4.4,
+    duration: "≈80 мин",
+    poster: { icon: "🐱", grad: "linear-gradient(160deg,#ff9d6f,#b0552b)" },
     review:
-      "ЙоЙо приехала из Бразилии. Учиться. Влюбляться. Ошибаться. Сделано DW для начинающих. Короткие сцены. Живой язык. Мягкий вход.",
-    why: "Учебный сериал DW. Речь чистая, темп спокойный.",
+      "Старик и котёнок. Домик в деревне. Тёплые истории. Ничего не спешит. Речь ясная. Уютно, как плед зимой.",
+    why: "Медленный темп. Чёткая речь. Добрый быт.",
     links: [
-      { name: "DW Learn German", url: "https://learngerman.dw.com/de/jojo-sucht-das-gl%C3%BCck/s-31564677" }
+      { name: "Amazon Prime", url: "https://www.amazon.de/s?k=pettersson+und+findus" }
     ]
   },
 
   /* ---------------- A1 ---------------- */
   {
-    id: "tuerkisch-fuer-anfaenger",
-    title: "Турецкий для начинающих",
-    titleDe: "Türkisch für Anfänger",
-    year: 2006,
+    id: "benjamin-bluemchen",
+    title: "Слонёнок Бенджамин",
+    titleDe: "Benjamin Blümchen",
+    year: 1977,
     level: "A1",
-    kind: "Сериал",
-    genre: ["Комедия", "Семейное"],
-    rating: 4.6,
-    duration: "≈25 мин",
-    poster: { icon: "👨‍👩‍👧‍👦", grad: "linear-gradient(160deg,#ef8e5b,#8f3a1b)" },
-    review:
-      "Две семьи стали одной. Немцы и турки под одной крышей. Конфликты. Шутки. Любовь. Язык простой, но живой. Смеёшься и запоминаешь.",
-    why: "Бытовые диалоги. Молодые герои. Речь современная.",
-    links: [
-      { name: "ARD Mediathek", url: "https://www.ardmediathek.de/sendung/tuerkisch-fuer-anfaenger" },
-      { name: "Netflix", url: "https://www.netflix.com/title/70213270" }
-    ]
-  },
-  {
-    id: "berlin-berlin",
-    title: "Берлин, Берлин",
-    titleDe: "Berlin, Berlin",
-    year: 2002,
-    level: "A1",
-    kind: "Сериал",
-    genre: ["Комедия", "Романтика"],
+    kind: "Мультсериал",
+    genre: ["Приключения", "Семейное"],
     rating: 4.3,
     duration: "≈25 мин",
-    poster: { icon: "🎨", grad: "linear-gradient(160deg,#5bcfef,#1b5f8f)" },
+    poster: { icon: "🐘", grad: "linear-gradient(160deg,#8ec5ff,#2a5fb0)" },
     review:
-      "Лолле приехала в Берлин. Работа, любовь, соседи. Серии лёгкие. Голос за кадром объясняет мысли. Ты слышишь и понимаешь героиню.",
-    why: "Закадровый голос помогает следить за сюжетом.",
+      "Говорящий слон живёт в зоопарке. Töröö! Помогает друзьям. Речь чистая и добрая. Классика немецкого детства. Слушать легко.",
+    why: "Ясная дикция. Простые истории. Знакомые слова.",
     links: [
-      { name: "ARD Mediathek", url: "https://www.ardmediathek.de/sendung/berlin-berlin" }
+      { name: "Netflix", url: "https://www.netflix.com/search?q=benjamin%20bl%C3%BCmchen" },
+      { name: "YouTube", url: "https://www.youtube.com/@BenjaminBluemchen" }
     ]
   },
   {
-    id: "bibi-und-tina",
-    title: "Бибби и Тина",
-    titleDe: "Bibi & Tina",
-    year: 2014,
+    id: "bibi-blocksberg",
+    title: "Ведьмочка Бибби",
+    titleDe: "Bibi Blocksberg",
+    year: 1980,
     level: "A1",
-    kind: "Фильм",
-    genre: ["Семейное", "Приключения"],
-    rating: 4.1,
-    duration: "≈100 мин",
-    poster: { icon: "🐴", grad: "linear-gradient(160deg,#8eef5b,#4a8f1b)" },
+    kind: "Мультсериал",
+    genre: ["Магия", "Семейное"],
+    rating: 4.2,
+    duration: "≈25 мин",
+    poster: { icon: "🧹", grad: "linear-gradient(160deg,#c39aff,#5f2b9c)" },
     review:
-      "Две подруги. Лошади. Лето. Немного магии. Фильм для семьи. Слова простые. Песни запоминаются. Приятно и без напряга.",
-    why: "Ясная речь. Простые истории. Молодые актёры.",
+      "Маленькая ведьма. Метла. Заклинания. Eene meene… — и магия! Сюжеты простые. Речь бодрая. Волшебство держит внимание.",
+    why: "Понятные диалоги. Весёлый сюжет. Повтор заклинаний.",
     links: [
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B00K19P3VC" }
+      { name: "Netflix", url: "https://www.netflix.com/search?q=bibi%20blocksberg" },
+      { name: "YouTube", url: "https://www.youtube.com/@BibiBlocksberg" }
     ]
   },
   {
-    id: "das-haus-anubis",
-    title: "Дом Анубис",
-    titleDe: "Das Haus Anubis",
-    year: 2009,
+    id: "heidi",
+    title: "Хайди",
+    titleDe: "Heidi",
+    year: 1974,
     level: "A1",
-    kind: "Сериал",
-    genre: ["Мистика", "Подростковое"],
-    rating: 4.0,
-    duration: "≈15 мин",
-    poster: { icon: "🔺", grad: "linear-gradient(160deg,#c15bef,#5f1b8f)" },
+    kind: "Аниме",
+    genre: ["Драма", "Семейное"],
+    rating: 4.6,
+    duration: "≈25 мин",
+    poster: { icon: "⛰️", grad: "linear-gradient(160deg,#8fd3a0,#2f7fb0)" },
     review:
-      "Интернат. Тайна. Пропавшая девочка. Серии короткие. Интрига держит. Хочешь узнать дальше — слушаешь внимательнее. Так учат уши.",
-    why: "Короткий формат. Простая лексика. Мотивирует смотреть дальше.",
+      "Девочка в Альпах. Дедушка, козы, горы. Немецкий дубляж чистый. История трогает. Тёплая классика на все времена.",
+    why: "Медленная речь. Понятные эмоции. Простая жизнь в горах.",
     links: [
-      { name: "YouTube", url: "https://www.youtube.com/results?search_query=das+haus+anubis" }
-    ]
-  },
-  {
-    id: "ku-damm-56",
-    title: "Кудам 56",
-    titleDe: "Ku'damm 56",
-    year: 2016,
-    level: "A1",
-    kind: "Мини-сериал",
-    genre: ["Драма", "История"],
-    rating: 4.4,
-    duration: "≈90 мин",
-    poster: { icon: "💃", grad: "linear-gradient(160deg,#ef5bc1,#8f1b5f)" },
-    review:
-      "Берлин пятидесятых. Танцшкола. Три сестры. Строгая мать. Красивая картинка. Речь ясная и театральная. Сложнее детского, но всё ещё мягко.",
-    why: "Чёткая дикция. Медленные диалоги. Сильные эмоции в кадре.",
-    links: [
-      { name: "ZDF Mediathek", url: "https://www.zdf.de/serien/kudamm" }
+      { name: "YouTube", url: "https://www.youtube.com/results?search_query=heidi+zeichentrick+deutsch" }
     ]
   },
   {
@@ -213,10 +178,10 @@ const FILMS = [
     year: 1974,
     level: "A1",
     kind: "Мультсериал",
-    genre: ["Детское", "Приключения"],
-    rating: 4.0,
+    genre: ["Приключения", "Семейное"],
+    rating: 4.1,
     duration: "≈25 мин",
-    poster: { icon: "⛵", grad: "linear-gradient(160deg,#5b6eef,#1b2a8f)" },
+    poster: { icon: "⛵", grad: "linear-gradient(160deg,#6ea8ef,#1b3a8f)" },
     review:
       "Маленький викинг. Большая голова. Хитрые идеи. Приключения на море. Немецкий тут добрый и понятный. Классика поколений.",
     why: "Приключенческий сюжет. Ясная речь. Простые слова.",
@@ -224,117 +189,150 @@ const FILMS = [
       { name: "YouTube", url: "https://www.youtube.com/results?search_query=wickie+und+die+starken+m%C3%A4nner" }
     ]
   },
+  {
+    id: "nils-holgersson",
+    title: "Путешествие Нильса",
+    titleDe: "Nils Holgersson",
+    year: 1980,
+    level: "A1",
+    kind: "Аниме",
+    genre: ["Приключения"],
+    rating: 4.3,
+    duration: "≈25 мин",
+    poster: { icon: "🦢", grad: "linear-gradient(160deg,#7fe0c9,#1b7d8f)" },
+    review:
+      "Мальчик стал крошечным. Улетел с дикими гусями. Видит всю страну сверху. Речь ясная. Приключение большое, слова простые.",
+    why: "Понятный рассказ. Спокойный темп. Много действия.",
+    links: [
+      { name: "YouTube", url: "https://www.youtube.com/results?search_query=nils+holgersson+deutsch" }
+    ]
+  },
+  {
+    id: "der-grueffelo",
+    title: "Груффало",
+    titleDe: "Der Grüffelo",
+    year: 2011,
+    level: "A1",
+    kind: "Мультфильм",
+    genre: ["Сказка", "Для малышей"],
+    rating: 4.7,
+    duration: "≈27 мин",
+    poster: { icon: "🌲", grad: "linear-gradient(160deg,#7fb069,#2e5233)" },
+    review:
+      "Мышонок идёт по лесу. Придумывает монстра. Монстр оказался настоящим. Всё в рифму. Красиво нарисовано. Короткая жемчужина.",
+    why: "Стихи и рифмы. Медленно и чётко. Легко запомнить.",
+    links: [
+      { name: "Amazon Prime", url: "https://www.amazon.de/s?k=der+gr%C3%BCffelo" }
+    ]
+  },
 
   /* ---------------- A2 ---------------- */
   {
-    id: "good-bye-lenin",
-    title: "Гуд бай, Ленин!",
-    titleDe: "Good Bye, Lenin!",
-    year: 2003,
+    id: "der-koenig-der-loewen",
+    title: "Король Лев",
+    titleDe: "Der König der Löwen",
+    year: 1994,
     level: "A2",
-    kind: "Фильм",
-    genre: ["Драма", "Комедия"],
-    rating: 4.8,
-    duration: "121 мин",
-    poster: { icon: "🚩", grad: "linear-gradient(160deg,#ef5b5b,#8f1b3a)" },
+    kind: "Мультфильм",
+    genre: ["Драма", "Приключения"],
+    rating: 4.9,
+    duration: "88 мин",
+    poster: { icon: "🦁", grad: "linear-gradient(160deg,#ffb347,#a5561b)" },
     review:
-      "Стена пала. Мама проспала переворот. Сын врёт, что ГДР жива. Немецкий тёплый. Домашний. История трогает. Отличный фильм для А2.",
-    why: "Бытовые диалоги. Понятный сюжет. Классика для учащих язык.",
+      "Симба теряет отца. Убегает. Взрослеет. Возвращается за троном. Немецкий дубляж мощный. Эмоции понятны без слов. Легенда Disney.",
+    why: "Известный сюжет. Ясная речь героев. Помогает знание истории.",
     links: [
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B00E7YT9DG" },
-      { name: "Apple TV", url: "https://tv.apple.com/de/movie/good-bye-lenin/umc.cmc.6y6z8f" }
+      { name: "Disney+", url: "https://www.disneyplus.com/de-de/movies/der-koenig-der-loewen/1HqwiEcje1e0" }
     ]
   },
   {
-    id: "das-wunder-von-bern",
-    title: "Чудо Берна",
-    titleDe: "Das Wunder von Bern",
-    year: 2003,
-    level: "A2",
-    kind: "Фильм",
-    genre: ["Драма", "Спорт"],
-    rating: 4.5,
-    duration: "118 мин",
-    poster: { icon: "⚽", grad: "linear-gradient(160deg,#5bef8e,#1b8f52)" },
-    review:
-      "1954 год. Отец вернулся с войны. Сын любит футбол. Германия берёт кубок. Про семью. Про надежду. Речь спокойная, эмоции сильные.",
-    why: "Ясные диалоги. Понятная эпоха. Много бытовых сцен.",
-    links: [
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B00E7YSY0K" }
-    ]
-  },
-  {
-    id: "fack-ju-goehte",
-    title: "Училка против",
-    titleDe: "Fack ju Göhte",
+    id: "die-eiskoenigin",
+    title: "Холодное сердце",
+    titleDe: "Die Eiskönigin",
     year: 2013,
     level: "A2",
-    kind: "Фильм",
-    genre: ["Комедия"],
-    rating: 4.4,
-    duration: "119 мин",
-    poster: { icon: "🎓", grad: "linear-gradient(160deg,#efc15b,#8f6a1b)" },
+    kind: "Мультфильм",
+    genre: ["Магия", "Семейное"],
+    rating: 4.7,
+    duration: "102 мин",
+    poster: { icon: "❄️", grad: "linear-gradient(160deg,#a5d8ff,#4a72c4)" },
     review:
-      "Бывший вор идёт в школу. Учителем. Класс — хаос. Шутки резкие. Сленг живой. Смешно. Но осторожно: молодёжный жаргон здесь настоящий.",
-    why: "Современный разговорный. Много юмора. Немного сленга.",
+      "Две сестры. Ледяная сила. Одна прячется, другая ищет. Песни знакомы всем. Немецкий дубляж красивый. Пой и учи слова.",
+    why: "Знакомая история. Песни для запоминания. Чистый дубляж.",
     links: [
-      { name: "Netflix", url: "https://www.netflix.com/title/70298026" },
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B00J2F1G3E" }
+      { name: "Disney+", url: "https://www.disneyplus.com/de-de/movies/die-eiskoenigin/2Fb0zB9SzPzq" }
     ]
   },
   {
-    id: "der-vorname",
-    title: "Имя",
-    titleDe: "Der Vorname",
-    year: 2018,
+    id: "findet-nemo",
+    title: "В поисках Немо",
+    titleDe: "Findet Nemo",
+    year: 2003,
     level: "A2",
-    kind: "Фильм",
-    genre: ["Комедия", "Драма"],
-    rating: 4.3,
-    duration: "92 мин",
-    poster: { icon: "🍷", grad: "linear-gradient(160deg,#ef5b8e,#8f1b4a)" },
+    kind: "Мультфильм",
+    genre: ["Приключения", "Семейное"],
+    rating: 4.8,
+    duration: "100 мин",
+    poster: { icon: "🐠", grad: "linear-gradient(160deg,#4fc3f7,#1565c0)" },
     review:
-      "Ужин в кругу семьи. Один вопрос: как назвать сына. И всё взорвалось. Много диалогов. Всё в одной комнате. Слушать легко, следить приятно.",
-    why: "Разговоры за столом. Чистая речь. Одна локация.",
+      "Папа-рыба ищет сына. Через весь океан. Дори всё забывает. Смешно и трогательно. Речь живая, но понятная. Pixar в лучшем виде.",
+    why: "Понятный сюжет. Много бытовых диалогов. Живой юмор.",
     links: [
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B07MFT9F8L" }
+      { name: "Disney+", url: "https://www.disneyplus.com/de-de/movies/findet-nemo/6trFhtazlSLd" }
     ]
   },
   {
-    id: "vincent-will-meer",
-    title: "Винсент хочет к морю",
-    titleDe: "Vincent will Meer",
-    year: 2010,
+    id: "vaiana",
+    title: "Моана",
+    titleDe: "Vaiana",
+    year: 2016,
     level: "A2",
-    kind: "Фильм",
-    genre: ["Драма", "Роуд-муви"],
-    rating: 4.2,
-    duration: "96 мин",
-    poster: { icon: "🌊", grad: "linear-gradient(160deg,#5bd6ef,#1b6f8f)" },
-    review:
-      "Трое сбегают из клиники. Едут к морю. У каждого своя боль. Дорога лечит. Диалоги простые. Тема взрослая, язык доступный.",
-    why: "Спокойный темп. Понятные фразы. Тёплая история.",
-    links: [
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B0062TYQ0Q" }
-    ]
-  },
-  {
-    id: "die-welle",
-    title: "Волна",
-    titleDe: "Die Welle",
-    year: 2008,
-    level: "A2",
-    kind: "Фильм",
-    genre: ["Драма", "Триллер"],
+    kind: "Мультфильм",
+    genre: ["Приключения", "Магия"],
     rating: 4.6,
     duration: "107 мин",
-    poster: { icon: "🌀", grad: "linear-gradient(160deg,#8e8eef,#3a3a8f)" },
+    poster: { icon: "🌺", grad: "linear-gradient(160deg,#2ec5b6,#0a7d74)" },
     review:
-      "Учитель ставит эксперимент. Класс становится движением. Быстро. Страшно. Про власть и толпу. Речь школьная и ясная. Держит до конца.",
-    why: "Школьная лексика. Понятная драма. Сильный сюжет.",
+      "Девочка выходит в океан. Ищет полубога. Спасает свой остров. Море живое. Песни цепляют. Немецкий яркий и эмоциональный.",
+    why: "Ясная речь. Сильные эмоции. Песни помогают учить.",
     links: [
-      { name: "Amazon Prime", url: "https://www.amazon.de/dp/B00E7YSXTC" },
-      { name: "Apple TV", url: "https://tv.apple.com/de/movie/die-welle" }
+      { name: "Disney+", url: "https://www.disneyplus.com/de-de/movies/vaiana/4RLNoK6L2b0y" }
+    ]
+  },
+  {
+    id: "mein-nachbar-totoro",
+    title: "Мой сосед Тоторо",
+    titleDe: "Mein Nachbar Totoro",
+    year: 1988,
+    level: "A2",
+    kind: "Аниме",
+    genre: ["Магия", "Семейное"],
+    rating: 4.8,
+    duration: "86 мин",
+    poster: { icon: "🌳", grad: "linear-gradient(160deg,#7fb069,#2e5233)" },
+    review:
+      "Две сестры переехали в деревню. Нашли лесного духа. Тихое чудо. Ghibli. Речь спокойная и бытовая. Тепло на весь фильм.",
+    why: "Медленный темп. Простые семейные диалоги. Мало сложных слов.",
+    links: [
+      { name: "Netflix", url: "https://www.netflix.com/title/60032294" }
+    ]
+  },
+  {
+    id: "zoomania",
+    title: "Зверополис",
+    titleDe: "Zoomania",
+    year: 2016,
+    level: "A2",
+    kind: "Мультфильм",
+    genre: ["Комедия", "Детектив"],
+    rating: 4.7,
+    duration: "108 мин",
+    poster: { icon: "🦊", grad: "linear-gradient(160deg,#ffa26b,#c85a2b)" },
+    review:
+      "Зайчиха стала полицейским. Лис — её напарник. Вместе раскрывают дело. Город зверей огромный. Речь быстрее, но чёткая. Умно и смешно.",
+    why: "Динамичный сюжет. Современная речь. Немного быстрее — для А2 в самый раз.",
+    links: [
+      { name: "Disney+", url: "https://www.disneyplus.com/de-de/movies/zoomania/4lssnWjyEjMr" }
     ]
   }
 ];
@@ -342,24 +340,24 @@ const FILMS = [
 const LEVELS = {
   A0: {
     code: "A0",
-    name: "Первый шаг",
-    tagline: "Ты только начал. Смотри и слушай.",
-    desc: "Нулевой уровень. Речь медленная. Слова простые. Картинка объясняет сама. Здесь не страшно ничего не понять — тут понятно почти всё.",
-    grad: "linear-gradient(135deg,#5b8def,#8e5bef)"
+    name: "Первое чудо",
+    tagline: "Ты только начал. Смотри и улыбайся.",
+    desc: "Нулевой уровень. Слов почти нет. Картинка рассказывает сама. Малыши смотрят и всё понимают. Ты тоже сможешь. Здесь не страшно.",
+    grad: "linear-gradient(135deg,#8ec5ff,#c39aff)"
   },
   A1: {
     code: "A1",
     name: "Первые слова",
-    tagline: "Ты знаешь основы. Пора слушать истории.",
-    desc: "Первый уровень. Уже есть база. Простые диалоги. Быт и семья. Сюжеты держат внимание. Ты ловишь знакомые слова и радуешься.",
-    grad: "linear-gradient(135deg,#ef8e5b,#ef5bc1)"
+    tagline: "Ты знаешь основы. Пора слушать сказки.",
+    desc: "Первый уровень. Уже есть база. Простые диалоги. Волшебство и приключения. Ты ловишь знакомые слова и радуешься. Магия помогает.",
+    grad: "linear-gradient(135deg,#ffd86b,#ff9ad4)"
   },
   A2: {
     code: "A2",
-    name: "Настоящее кино",
-    tagline: "Ты готов к большим фильмам.",
-    desc: "Второй уровень. Речь быстрее. Эмоции сильнее. Настоящие фильмы, а не учебные. Ты уже понимаешь сюжет и характеры. Смотри с субтитрами.",
-    grad: "linear-gradient(135deg,#5bef8e,#5bd6ef)"
+    name: "Большое кино",
+    tagline: "Ты готов к настоящим шедеврам.",
+    desc: "Второй уровень. Полные мультфильмы. Disney, Pixar, Ghibli — в немецком дубляже. Речь живее, эмоции сильнее. Смотри с субтитрами и наслаждайся.",
+    grad: "linear-gradient(135deg,#7fe0c9,#8ec5ff)"
   }
 };
 

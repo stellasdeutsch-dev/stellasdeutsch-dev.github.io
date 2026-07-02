@@ -1,12 +1,13 @@
-/* Stellas Deutsch — общий скрипт: звёзды, рендер карточек, фильтр, сортировка */
+/* Stellas Deutsch — общий скрипт: волшебные звёзды, рендер карточек, фильтр, сортировка */
 
-/* ---------- Звёздное небо ---------- */
+/* ---------- Волшебное небо: золотые искры + падающая звезда ---------- */
 (function starfield() {
   const c = document.getElementById("stars");
   if (!c) return;
   const ctx = c.getContext("2d");
   let w, h, stars, raf;
-  const DENSITY = 0.00016;
+  const DENSITY = 0.00018;
+  const COLORS = ["#ffffff", "#ffe6a8", "#ffd86b", "#cfe3ff"];
 
   function resize() {
     w = c.width = window.innerWidth * devicePixelRatio;
@@ -17,38 +18,57 @@
     stars = Array.from({ length: n }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      r: (Math.random() * 1.3 + 0.2) * devicePixelRatio,
-      base: Math.random() * 0.5 + 0.3,
-      tw: Math.random() * 0.02 + 0.004,
-      ph: Math.random() * Math.PI * 2
+      r: (Math.random() * 1.4 + 0.25) * devicePixelRatio,
+      base: Math.random() * 0.5 + 0.35,
+      tw: Math.random() * 0.025 + 0.005,
+      ph: Math.random() * Math.PI * 2,
+      col: COLORS[(Math.random() * COLORS.length) | 0]
     }));
+  }
+
+  function paint(s, a) {
+    ctx.globalAlpha = Math.max(0.05, Math.min(1, a));
+    ctx.fillStyle = s.col;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+    if (s.r > 1.4 * devicePixelRatio) {
+      ctx.globalAlpha *= 0.4;
+      ctx.fillRect(s.x - s.r * 3, s.y - s.r * 0.18, s.r * 6, s.r * 0.36);
+      ctx.fillRect(s.x - s.r * 0.18, s.y - s.r * 3, s.r * 0.36, s.r * 6);
+    }
   }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     resize();
     ctx.clearRect(0, 0, w, h);
-    for (const s of stars) {
-      ctx.globalAlpha = s.base;
-      ctx.fillStyle = "#fff";
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    window.addEventListener("resize", resize);
+    for (const s of stars) paint(s, s.base);
+    window.addEventListener("resize", () => { resize(); ctx.clearRect(0, 0, w, h); for (const s of stars) paint(s, s.base); });
     return;
+  }
+
+  // падающая звезда
+  let shoot = null, nextShoot = 120;
+  function spawnShoot() {
+    shoot = { x: Math.random() * w * 0.5, y: Math.random() * h * 0.35, len: (120 + Math.random() * 90) * devicePixelRatio, life: 0, max: 45, sp: (9 + Math.random() * 5) * devicePixelRatio };
   }
 
   let t = 0;
   function draw() {
     t += 1;
     ctx.clearRect(0, 0, w, h);
-    for (const s of stars) {
-      const a = s.base + Math.sin(t * s.tw + s.ph) * 0.35;
-      ctx.globalAlpha = Math.max(0.05, Math.min(1, a));
-      ctx.fillStyle = "#ffffff";
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
+    for (const s of stars) paint(s, s.base + Math.sin(t * s.tw + s.ph) * 0.4);
+
+    if (!shoot && --nextShoot <= 0) { spawnShoot(); nextShoot = 260 + Math.random() * 320; }
+    if (shoot) {
+      const p = shoot.life / shoot.max;
+      const x = shoot.x + shoot.sp * shoot.life, y = shoot.y + shoot.sp * shoot.life * 0.55;
+      const g = ctx.createLinearGradient(x, y, x - shoot.len, y - shoot.len * 0.55);
+      g.addColorStop(0, "rgba(255,230,160," + (1 - p) + ")");
+      g.addColorStop(1, "rgba(255,230,160,0)");
+      ctx.strokeStyle = g; ctx.lineWidth = 2 * devicePixelRatio; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - shoot.len, y - shoot.len * 0.55); ctx.stroke();
+      if (++shoot.life > shoot.max) shoot = null;
     }
     raf = requestAnimationFrame(draw);
   }
@@ -171,7 +191,7 @@ function initCatalog(opts) {
   function render() {
     const list = apply();
     if (!list.length) {
-      grid.innerHTML = `<div class="empty"><div class="big">🛰️</div>Ничего не нашлось. Смени фильтр.</div>`;
+      grid.innerHTML = `<div class="empty"><div class="big">🪄</div>Магия не нашла ничего. Смени фильтр.</div>`;
     } else {
       grid.innerHTML = list.map((f, i) => cardHTML(f, i)).join("");
     }
@@ -198,7 +218,7 @@ function initCatalog(opts) {
 
 function pluralFilms(n) {
   const mod10 = n % 10, mod100 = n % 100;
-  if (mod10 === 1 && mod100 !== 11) return "фильм";
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return "фильма";
-  return "фильмов";
+  if (mod10 === 1 && mod100 !== 11) return "мультфильм";
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return "мультфильма";
+  return "мультфильмов";
 }
