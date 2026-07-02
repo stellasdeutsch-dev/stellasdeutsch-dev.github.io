@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellas Deutsch — фильмы для немецкого A0·A1·A2</title>
+  <meta name="description" content="Учить язык скучно. Смотреть кино — нет. Мы собрали фильмы для начинающих. От нуля до A2. Каждый — под твой уровень." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+  <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="logo">⭐</span> Stellas Deutsch <small>· Kino</small></a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Главная</a>
+        <a href="a0.html">A0</a>
+        <a href="a1.html">A1</a>
+        <a href="a2.html">A2</a>
+        <a href="../index.html" class="nav-cross">Мультфильмы ↗</a>
+      </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Немецкий через кино</span>
+      <h1>Смотри.<br />Слушай.<br />Понимай.</h1>
+      <p class="sub">Учить язык скучно. Смотреть кино — нет. Мы собрали фильмы для начинающих. От нуля до <b>A2</b>. Каждый — под твой уровень.</p>
+      <div class="pitch">
+        <span>Постер</span>
+        <span>Обзор</span>
+        <span>Оценка</span>
+        <span>Где смотреть</span>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Выбери свой уровень</h2><p>Три уровня. Три страницы. Начни с того, где тебе комфортно. Растёшь — идёшь дальше.</p></div>
+      <div class="levels" id="levelCards"></div>
+    </div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="wrap">
+      <div class="section-head"><h2>Вся подборка</h2><p>Все фильмы в одном месте. Фильтруй по уровню и жанру. Сортируй как удобно. Ищи по названию.</p></div>
+      <div class="controls">
+        <div class="filters">
+          <div id="levelChips" class="filters" style="gap:8px"></div>
+          <span style="color:var(--text-faint);padding:0 2px">·</span>
+          <div id="chips" class="filters" style="gap:8px"></div>
+        </div>
+        <div class="control-right">
+          <div class="search-box"><span style="color:var(--gold,#9aa)">🔍</span><input id="search" type="text" placeholder="Поиск…" /></div>
+          <div class="select-wrap">
+            <select id="sort" class="sort">
+              <option value="rating-desc">Оценка ↓</option>
+              <option value="rating-asc">Оценка ↑</option>
+              <option value="year-desc">Новее</option>
+              <option value="year-asc">Старее</option>
+              <option value="az">А–Я</option>
+              <option value="level">По уровню</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="result-count" id="resultCount" style="margin-bottom:18px"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap"><div class="made"><span>⭐</span> Stellas Deutsch</div><div>Фильмы для уровней A0–A2 · тексты в стиле Шынгыса</div></div>
+  </footer>
+
+  <script defer src="assets/data.js"></script>
+  <script defer src="assets/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var order = ["A0", "A1", "A2"];
+      document.getElementById("levelCards").innerHTML = order.map(function (code) {
+        var lv = LEVELS[code]; var n = FILMS.filter(function (f) { return f.level === code; }).length;
+        return '<a class="level-card" href="' + code.toLowerCase() + '.html">' +
+          '<div class="halo" style="background:' + lv.grad + '"></div>' +
+          '<span class="badge">' + lv.code + '</span><h3>' + lv.name + '</h3>' +
+          '<p class="tag">' + lv.tagline + '</p>' +
+          '<span class="count">' + n + ' ' + pluralFilms(n) + '</span>' +
+          '<span class="go">Открыть <span class="arw">→</span></span></a>';
+      }).join("");
+      initCatalog({ level: null });
+    });
+  </script>
+</body>
+</html>

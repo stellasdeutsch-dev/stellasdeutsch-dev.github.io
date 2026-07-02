@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stellas Deutsch — мультфильмы для немецкого A0·A1·A2</title>
-  <meta name="description" content="Волшебная подборка мультфильмов для изучения немецкого: уровни A0, A1, A2. Постеры, обзоры, оценки и где смотреть. Тема Disney от Stellas Deutsch." />
+  <meta name="description" content="Мультфильмы — это магия. И лучший способ учить язык. Мы собрали самые волшебные мультики. По уровням. От нуля до A2." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>" />
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+  <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,7 +15,6 @@
 </head>
 <body>
   <canvas id="stars"></canvas>
-
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="brand"><span class="logo">🏰</span> Stellas Deutsch <small>· Zeichentrick</small></a>
@@ -22,10 +23,10 @@
         <a href="a0.html">A0</a>
         <a href="a1.html">A1</a>
         <a href="a2.html">A2</a>
+        <a href="kino/index.html" class="nav-cross">Фильмы ↗</a>
       </div>
     </div>
   </nav>
-
   <header class="hero">
     <div class="wrap">
       <span class="eyebrow">Es war einmal…</span>
@@ -38,7 +39,6 @@
         <span>Где смотреть</span>
       </div>
     </div>
-    <!-- Замок -->
     <svg class="castle" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g fill="#0b1240" fill-opacity="0.9">
         <rect x="0" y="196" width="1200" height="64" />
@@ -64,25 +64,16 @@
     </svg>
   </header>
 
-  <!-- Уровни -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Выбери свой уровень</h2>
-        <p>Три уровня. Три страницы. Начни там, где тебе уютно. Растёшь — идёшь дальше.</p>
-      </div>
+      <div class="section-head"><h2>Выбери свой уровень</h2><p>Три уровня. Три страницы. Начни там, где тебе уютно. Растёшь — идёшь дальше.</p></div>
       <div class="levels" id="levelCards"></div>
     </div>
   </section>
 
-  <!-- Весь каталог -->
   <section class="section" id="catalog">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Вся подборка</h2>
-        <p>Все мультфильмы в одном месте. Фильтруй по уровню и жанру. Сортируй как удобно. Ищи по названию.</p>
-      </div>
-
+      <div class="section-head"><h2>Вся подборка</h2><p>Все мультфильмы в одном месте. Фильтруй по уровню и жанру. Сортируй как удобно. Ищи по названию.</p></div>
       <div class="controls">
         <div class="filters">
           <div id="levelChips" class="filters" style="gap:8px"></div>
@@ -90,10 +81,7 @@
           <div id="chips" class="filters" style="gap:8px"></div>
         </div>
         <div class="control-right">
-          <div class="search-box">
-            <span style="color:var(--gold)">🔍</span>
-            <input id="search" type="text" placeholder="Поиск…" />
-          </div>
+          <div class="search-box"><span style="color:var(--gold,#9aa)">🔍</span><input id="search" type="text" placeholder="Поиск…" /></div>
           <div class="select-wrap">
             <select id="sort" class="sort">
               <option value="rating-desc">Оценка ↓</option>
@@ -106,41 +94,31 @@
           </div>
         </div>
       </div>
-
       <div class="result-count" id="resultCount" style="margin-bottom:18px"></div>
       <div class="grid" id="grid"></div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="wrap">
-      <div class="made"><span>🏰</span> Stellas Deutsch</div>
-      <div>Мультфильмы для уровней A0–A2 · тексты в стиле Шынгыса</div>
-    </div>
+    <div class="wrap"><div class="made"><span>🏰</span> Stellas Deutsch</div><div>Мультфильмы для уровней A0–A2 · тексты в стиле Шынгыса</div></div>
   </footer>
 
-  <script src="assets/data.js"></script>
-  <script src="assets/app.js"></script>
+  <script defer src="assets/data.js"></script>
+  <script defer src="assets/app.js"></script>
   <script>
-    (function () {
-      const cards = document.getElementById("levelCards");
-      const order = ["A0", "A1", "A2"];
-      cards.innerHTML = order.map((code) => {
-        const lv = LEVELS[code];
-        const n = FILMS.filter((f) => f.level === code).length;
-        return `
-        <a class="level-card" href="${code.toLowerCase()}.html">
-          <div class="halo" style="background:${lv.grad}"></div>
-          <span class="badge">${lv.code}</span>
-          <h3>${lv.name}</h3>
-          <p class="tag">${lv.tagline}</p>
-          <span class="count">${n} ${pluralFilms(n)}</span>
-          <span class="go">Открыть <span class="arw">→</span></span>
-        </a>`;
+    document.addEventListener("DOMContentLoaded", function () {
+      var order = ["A0", "A1", "A2"];
+      document.getElementById("levelCards").innerHTML = order.map(function (code) {
+        var lv = LEVELS[code]; var n = FILMS.filter(function (f) { return f.level === code; }).length;
+        return '<a class="level-card" href="' + code.toLowerCase() + '.html">' +
+          '<div class="halo" style="background:' + lv.grad + '"></div>' +
+          '<span class="badge">' + lv.code + '</span><h3>' + lv.name + '</h3>' +
+          '<p class="tag">' + lv.tagline + '</p>' +
+          '<span class="count">' + n + ' ' + pluralFilms(n) + '</span>' +
+          '<span class="go">Открыть <span class="arw">→</span></span></a>';
       }).join("");
-    })();
-
-    initCatalog({ level: null });
+      initCatalog({ level: null });
+    });
   </script>
 </body>
 </html>
