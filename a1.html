@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Уровень A1 — Stellas Deutsch</title>
+  <meta name="description" content="Немецкие фильмы для уровня A1. Постеры, обзоры, оценки, где смотреть. Stellas Deutsch." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand"><span class="logo">⭐</span> Stellas Deutsch <small>· Kino</small></a>
+      <div class="nav-links">
+        <a href="index.html">Главная</a>
+        <a href="a0.html">A0</a>
+        <a href="a1.html" class="active">A1</a>
+        <a href="a2.html">A2</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="lvl-hero">
+    <div class="wrap">
+      <span class="badge-lg" style="background:linear-gradient(135deg,#ff9d6f,#ef5bc1)">УРОВЕНЬ A1</span>
+      <h1 id="lvlName"></h1>
+      <p class="tagline" id="lvlTag"></p>
+      <p class="desc" id="lvlDesc"></p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:24px">
+    <div class="wrap">
+      <div class="controls">
+        <div class="filters" id="chips"></div>
+        <div class="control-right">
+          <div class="search-box">
+            <span style="color:var(--text-faint)">🔍</span>
+            <input id="search" type="text" placeholder="Поиск…" />
+          </div>
+          <div class="select-wrap">
+            <select id="sort" class="sort">
+              <option value="rating-desc">Оценка ↓</option>
+              <option value="rating-asc">Оценка ↑</option>
+              <option value="year-desc">Новее</option>
+              <option value="year-asc">Старее</option>
+              <option value="az">А–Я</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-count" id="resultCount" style="margin-bottom:18px"></div>
+      <div class="grid" id="grid"></div>
+
+      <div class="section-head" style="margin-top:20px;margin-bottom:18px"><h2 style="font-size:24px">Другие уровни</h2></div>
+      <div class="other-levels">
+        <a href="a0.html">
+          <span class="l">Уровень A0<small>__NAME_A0__</small></span>
+          <span class="arw">→</span>
+        </a>
+        <a href="a2.html">
+          <span class="l">Уровень A2<small>__NAME_A2__</small></span>
+          <span class="arw">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="made"><span class="logo">⭐</span> Stellas Deutsch · Кино для уровней A0–A2</div>
+      <div>Текст в стиле Шынгыса. Коротко. По делу.</div>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    (function(){
+      const lv = LEVELS["A1"];
+      document.getElementById("lvlName").textContent = lv.name;
+      document.getElementById("lvlTag").textContent = lv.tagline;
+      document.getElementById("lvlDesc").textContent = lv.desc;
+      document.querySelectorAll('.other-levels a').forEach(a=>{
+        const m = a.getAttribute('href').replace('.html','').toUpperCase();
+        a.querySelector('small').textContent = LEVELS[m].name;
+      });
+    })();
+    initCatalog({ level: "A1" });
+  </script>
+</body>
+</html>
