@@ -1,6 +1,6 @@
 // generated at build time
-const CACHE = 'study-cabinet-muu77kyn';
-const SHELL = ["./","./assets/pdf.worker.min-yatZIOMy.mjs","./assets/index-4fhL1-kD.css","./assets/index-DkExqKft.js","./assets/pdf-BnPRJEQ6.js","./assets/pdf.worker.min-DgRcL-GR.js","./manifest.webmanifest","./icon-192.png","./icon-512.png","./apple-touch-icon.png"];
+const CACHE = 'study-cabinet-muu7owh3';
+const SHELL = ["./","./assets/pdf.worker.min-yatZIOMy.mjs","./assets/index-C_9bgGXi.css","./assets/index-Bz090u8l.js","./assets/pdf-BnPRJEQ6.js","./assets/pdf.worker.min-DgRcL-GR.js","./manifest.webmanifest","./icon-192.png","./icon-512.png","./apple-touch-icon.png"];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => Promise.all(SHELL.map((u) => c.add(u).catch(() => null)))).then(() => self.skipWaiting()));
